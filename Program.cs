@@ -19,6 +19,8 @@ builder.Services.AddSwaggerGen();
 
 // Controller and Service config
 builder.Services.AddControllers();
+builder.Services.AddRepositories();
+builder.Services.AddDomainServices();
 
 // EF Core DbContext config
 builder.Services.AddDbContext<Data.AppDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));

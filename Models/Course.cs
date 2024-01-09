@@ -7,7 +7,7 @@ public class Course
     public string CourseId { get; set; }
     public string Name { get; set; }
 
-    public ICollection<Enrollment> Enrollments { get; set; }
+    public ICollection<Enrollment>? Enrollments { get; set; }
 
     public Course(string courseId, string name)
     {

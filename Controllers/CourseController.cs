@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Services;
 using Models;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace Controllers;
 
@@ -25,7 +24,7 @@ public class CourseController : ControllerBase
     [HttpPost]
     public async Task<ActionResult> CreateNewCourse([FromQuery] string courseId, [FromQuery] string name) {
         Course course = new Course(courseId, name);
-        _courseService.AddCourseAsync(course);
+        await _courseService.AddCourseAsync(course);
 
         return NoContent();
     }
