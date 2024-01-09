@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Services;
 using Models;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace Controllers;
 
@@ -16,11 +17,16 @@ public class CourseController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult GetAllCourses() {
-        List<Course> Courses = _courseService.GetAllCoursesAsync();
-
-        return Ok();
+    public async Task<ActionResult> GetAllCourses() {
+        var courses = await _courseService.GetAllCoursesAsync();
+        return Ok(courses);
     }
 
     [HttpPost]
+    public async Task<ActionResult> CreateNewCourse([FromQuery] string courseId, [FromQuery] string name) {
+        Course course = new Course(courseId, name);
+        _courseService.AddCourseAsync(course);
+
+        return NoContent();
+    }
 }

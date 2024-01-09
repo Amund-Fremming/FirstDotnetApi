@@ -16,7 +16,7 @@ public class CourseService
         return await _courseRepo.GetAllCourses();
     }
 
-    public async Task AddStudentAsync(Course course)
+    public async Task AddCourseAsync(Course course)
     {
         await _courseRepo.AddCourseAsync(course);
     }
