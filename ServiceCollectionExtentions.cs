@@ -1,20 +1,21 @@
 using Microsoft.Extensions.DependencyInjection;
 using Repositories;
 using Services;
+using Servies;
 
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<CourseRepo>();
-        // Add more repository registrations here
+        services.AddScoped<StudentRepo>();
         return services;
     }
 
     public static IServiceCollection AddDomainServices(this IServiceCollection services)
     {
         services.AddScoped<CourseService>();
-        // Add more service registrations here
+        services.AddScoped<StudentService>();
         return services;
     }
 }
