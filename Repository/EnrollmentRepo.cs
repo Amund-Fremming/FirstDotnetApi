@@ -18,7 +18,7 @@ public class EnrollmentRepo
     {
         return await _context.Enrollments
                             .Where(e => e.Student.StudentId == studentId)
-                            .Include(e => e.Student)
+                            .Include(e => e.Student)                            // The Includes adds the relations
                             .Include(e => e.Course)
                             .ToListAsync();
     }

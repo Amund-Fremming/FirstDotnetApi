@@ -3,6 +3,9 @@ using Repositories;
 using Services;
 using Servies;
 
+/*
+    This is a class for adding services and repos instead of adding everything inside of Program.cs
+*/
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddRepositories(this IServiceCollection services)

@@ -21,7 +21,7 @@ public class StudentRepo
     public async Task<List<Student>> GetAllStudentsAsync()
     {
         return await _context.Students
-                    .Include(e => e.Enrollments)    
+                    .Include(e => e.Enrollments)            // The Includes adds the relations to the request
                     .ToListAsync();
     }
 

@@ -21,7 +21,7 @@ public class CourseRepo
     public async Task<List<Course>> GetAllCourses()
     {
         return await _context.Courses
-                    .Include(e => e.Enrollments)
+                    .Include(e => e.Enrollments)        // Includes adds the relations to the response, so we get the connections to the object
                     .ToListAsync();
     }
 

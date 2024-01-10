@@ -19,9 +19,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Controller and Service config
-builder.Services.AddControllers().AddJsonOptions(options =>
+builder.Services.AddControllers().AddJsonOptions(options =>         
 {
-    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;     // Ignores relation cycles!!! !Important!
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;     // Ignores relation cycles!!! Important!
 });
 builder.Services.AddRepositories();
 builder.Services.AddDomainServices();

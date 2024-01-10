@@ -15,6 +15,7 @@ public class AppDbContext : DbContext
 
     }
 
+    // Adds the PK and FK and handles the relations in out application
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Enrollment>()
