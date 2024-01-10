@@ -12,4 +12,7 @@
 # Global Framework installation
 
     - dotnet tool install --global dotnet-ef
-# FirstDotnetApi
+
+# Gitignore file
+
+    - Important: Added most of the files in obj, because theese are use specific
