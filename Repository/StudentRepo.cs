@@ -13,9 +13,16 @@ public class StudentRepo
         _context = context;
     }
 
+    public async Task<Student?> GetStudentById(int studentId)
+    {
+        return await _context.Students.FindAsync(studentId);
+    }
+
     public async Task<List<Student>> GetAllStudentsAsync()
     {
-        return await _context.Students.ToListAsync();
+        return await _context.Students
+                    .Include(e => e.Enrollments)    
+                    .ToListAsync();
     }
 
     public async Task AddStudentAsync(Student student)

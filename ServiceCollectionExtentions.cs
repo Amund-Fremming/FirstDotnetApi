@@ -9,6 +9,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddScoped<CourseRepo>();
         services.AddScoped<StudentRepo>();
+        services.AddScoped<EnrollmentRepo>();
         return services;
     }
 
@@ -16,6 +17,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddScoped<CourseService>();
         services.AddScoped<StudentService>();
+        services.AddScoped<EnrollmentService>();
         return services;
     }
 }
