@@ -5,8 +5,8 @@ namespace Models;
 
 public class Student
 {
-    public int StudentId { get; set; }
-    public string Name { get; set; }
+    public int? StudentId { get; set; }
+    public string? Name { get; set; }
 
     // Initialize the collection in the constructor
     public virtual ICollection<Enrollment> Enrollments { get; set; }
