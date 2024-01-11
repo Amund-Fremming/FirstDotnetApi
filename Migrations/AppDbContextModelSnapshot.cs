@@ -27,7 +27,6 @@ namespace FirstDotnetApi.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("CourseId");

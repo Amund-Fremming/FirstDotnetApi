@@ -9,13 +9,9 @@ public class Course
 
     public ICollection<Enrollment> Enrollments { get; set; }
 
-    public Course()
+    public Course(string courseId, string name)
     {
         Enrollments = new HashSet<Enrollment>();
-    }
-
-    public Course(string courseId, string name) : this()
-    {
         CourseId = courseId ?? throw new ArgumentNullException(nameof(courseId));
         Name = name ?? throw new ArgumentNullException(nameof(name));
     }

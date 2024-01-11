@@ -16,7 +16,7 @@ namespace FirstDotnetApi.Migrations
                 columns: table => new
                 {
                     CourseId = table.Column<string>(type: "text", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: false)
+                    Name = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FirstDotnetApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240110094106_InitialCreate")]
+    [Migration("20240111071513_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -30,7 +30,6 @@ namespace FirstDotnetApi.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("CourseId");
